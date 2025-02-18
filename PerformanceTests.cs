@@ -5,7 +5,7 @@ public class PerformanceTests
 {
     public static void Main()
     {
-        int[] operationCounts = { 100, 1000, 10000, 100000 };
+        int[] operationCounts = { 100000, 1000000, 10000000, 100000000 };
 
         // Тестування стеку на основі масиву
         Console.WriteLine("ArrayStack performance:");
