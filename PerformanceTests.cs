@@ -19,6 +19,18 @@ public class PerformanceTests
             Console.WriteLine($"{count} operations: {stopwatch.ElapsedMilliseconds} ms");
         }
 
+        // Тестування стеку на основі масиву
+        Console.WriteLine("ArrayStack performance:");
+        foreach (int count in operationCounts)
+        {
+            var arrayStack = new ArrayStack<int>(count);
+            var stopwatch = Stopwatch.StartNew();
+            for (int i = 0; i < count; i++) arrayStack.Push(i);
+            for (int i = 0; i < count; i++) arrayStack.Pop();
+            stopwatch.Stop();
+            Console.WriteLine($"{count} operations: {stopwatch.ElapsedMilliseconds} ms");
+        }
+
         // Тестування стеку на основі зв'язного списку
         Console.WriteLine("LinkedListStack performance:");
         foreach (int count in operationCounts)
